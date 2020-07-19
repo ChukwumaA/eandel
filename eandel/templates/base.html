@@ -1,114 +1,231 @@
-{% load static i18n compress%}<!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}eandel{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Responsive Bootstrap Creative HTML Template">
+  <meta name="keywords" content="eandeluxury, Bootstrap, creative Template, minimal, agency, corporate">
+  <meta name="author" content="rashed amin">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+  <!-- SITE TITLE -->
+  <title>£andé Luxury</title>
 
-    {% block css %}
-    
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+  <!-- =========================
+  FAV AND TOUCH ICONS (RETINA)
+  ============================== -->
+  <link rel="icon" href="{% static 'images/favicon.ico' %}">
+  <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.html' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.html' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.html' %}">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{% static 'apple-icon-57x57.html' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'apple-icon-144x144.html' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'apple-icon-120x120.html' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'apple-icon-152x152.html' %}" />
+  <link rel="icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16" />
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.html" />
 
-    <!-- Your stuff: Third-party CSS libraries go here -->
-    {% compress css %}
-    <!-- This file stores project-specific CSS -->
-    
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
-    
-    {% endcompress %}
-    {% endblock %}
+  <!-- =========================
+  STYLESHEETS
+  ============================== -->
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-  </head>
 
-  <body>
+  <!-- FONT ICONS -->
+  <link rel="stylesheet" href="{% static 'assets/elegant-icons/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/et-line-font/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/ion-icon/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'assets/app-icons/styles.css' %}"> -->
+  <!--[if lte IE 7]><script src="{% static 'lte-ie7.js' %}"></script><![endif]-->
 
-    <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="{% url 'home' %}">eandel</a>
+  <!-- CAROUSEL AND LIGHTBOX -->
+  <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/nivo-lightbox.css' %}">
+  <link rel="stylesheet" href="{% static 'css/nivo_themes/default/default.css' %}">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-              </li>
-            {% endif %}
+
+
+  <!-- ANIMATIONS -->
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+  <!-- MAIN STYLESHEETS -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  <!-- KENBURN SLIDE SHOW -->
+  <link rel="stylesheet" href="{% static 'css/vegas.min.css' %}">
+
+  <!-- COLORS -->
+  <link rel="stylesheet" href="{% static 'css/color-schemes/light-teal.css' %}">
+
+  <!-- RESPONSIVE FIXES -->
+  <!-- <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> -->
+
+
+  <!--[if lt IE 9]>
+  <script src="{% static 'js/html5shiv.js' %}"></script>
+  <script src="{% static 'js/respond.min.js' %}"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <!-- =========================
+  PRE LOADER
+  ============================== -->
+  <div class="preloader">
+    <div id="ip-container" class="ip-container">
+      <div class="ip-header">
+        <div class="ip-loader">
+          <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+            <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+            <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =========================
+  HEADER
+  ============================== -->
+
+
+  <header class="header" id="home">
+    <!-- HEADER COLOR OVER IMAGE -->
+
+    <!-- STICKY NAVIGATION -->
+    <div class="navbar bs-docs-nav navbar-fixed-top sticky-navigation">
+      <div class="container">
+        <div class="navbar-header">
+
+          <!-- LOGO ON STICKY NAV BAR -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo" /><div class="logo-title">£ANDÉ Luxury</div></a>
+
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <div class="navbar-collapse collapse" id="navigation">
+          <ul class="nav navbar-nav navbar-right main-navigation">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#team">team</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </div> <!--END NAVIGATION LINKS -->
+      </div> <!-- /END CONTAINER -->
+    </div> <!-- /END STICKY NAVIGATION -->
+
+    {% block content %}
+    {% endblock content %}
+
+
+
+  <!-- =========================
+  FOOTER
+  ============================== -->
+  <footer class="footer-section footer-1">
+    <div class="row footer-content">
+      <div class="col-md-6 footer-column">
+        <!-- footer logo -->
+        <div class="footer-logo">
+          <img src="images/logo-white.png" alt="logo" />
+          <p>£ANDÉ Luxury</p>
+        </div>
+        <div class="footer-desc">
+          Creating and promoting luxury in Africa.
+        </div>
+        <!-- COPYRIGHT TEXT -->
+        <div class="copyright-3">&copy; £andé. All Rights Reserved.</div>
+      </div>
+      <div class="col-md-3 footer-column">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item footer__nav-item--heading">Company</li>
+          <li class="footer__nav-item"><a href="#about" class="footer__nav-link">About</a></li>
+          <li class="footer__nav-item"><a href="blog-list-01.html" class="footer__nav-link">Services</a></li>
+          <li class="footer__nav-item"><a href="#contact-us" class="footer__nav-link">Contact</a></li>
+          <li class="footer__nav-item"><a href="#policy" class="footer__nav-link">Team</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 footer-column">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item footer__nav-item--heading">Contact</li>
+          <li>12 Nwabuo Brown street, Gbagada,<br>
+            Lagos, Nigeria, Africa.</li>
+
+            <li class="email-3">hello@eandeluxury.com</li>
+            <li class="footer__nav-item social-li"><a href="#" class="footer__nav-link">TWITTER</a><a href="#" class="footer__nav-link">FACEBOOK</a><a href="#" class="footer__nav-link">INSTAGRAM</a></li>
           </ul>
         </div>
-      </nav>
 
-    </div>
+      </div>
+      <!-- SCROLL UP -->
+      <div class="scroll-up">
+        <a class="theme-color-bg" href="#home"><i class="fa fa-angle-up"></i></a>
+      </div>
 
-    <div class="container">
 
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-          {% endfor %}
-      {% endif %}
+    </footer>
+    <!-- /END FOOTER -->
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
+    <!-- =========================
+    SCRIPTS
+    ============================== -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+    <script src="{% static 'js/jquery.localScroll.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/parallax.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/matchMedia.js' %}"></script>
+    <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/nivo-lightbox.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.js' %}"></script>
+    <script src="{% static 'js/pathLoader.js' %}"></script>
+    <script src="{% static 'js/vegas.min.js' %}"></script> <!-- Kenburn -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+      $('.kenbarn').vegas({
+        overlay: true,
+        transition: 'fade', 
+        transitionDuration: 4000,
+        delay: 10000,
+        animation: 'random',
+        animationDuration: 20000,
+        slides: [
+          { src: '{% static 'images/eande/kenburn-1.jpg' %}' },
+          { src: '{% static 'images/eande/kenburn-2.jpg' %}' },
+          { src: '{% static 'images/eande/kenburn-3.jpg' %}' },
+          { src: '{% static 'images/eande/kenburn-4.jpg' %}' }
+        ]
+      });
+    </script>
 
-    </div> <!-- /container -->
-
-    {% block modal %}{% endblock modal %}
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    {% block javascript %}
-      
-      <!-- Bootstrap JS and its dependencies-->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-      <!-- Your stuff: Third-party javascript libraries go here -->
-      
-
-      <!-- place project specific Javascript in this file -->
-      {% compress js %}
-      <script src="{% static 'js/project.js' %}"></script>
-      {% endcompress %}
-
-    {% endblock javascript %}
   </body>
+  
 </html>
- 
