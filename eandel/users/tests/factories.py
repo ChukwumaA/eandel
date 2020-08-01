@@ -2,6 +2,7 @@ from typing import Any, Sequence
 
 from django.contrib.auth import get_user_model
 from factory import DjangoModelFactory, Faker, post_generation
+from ..models import Contact
 
 
 class UserFactory(DjangoModelFactory):
@@ -29,3 +30,13 @@ class UserFactory(DjangoModelFactory):
     class Meta:
         model = get_user_model()
         django_get_or_create = ["username"]
+
+
+class ContactFactory(DjangoModelFactory):
+    email = Faker("email")
+    name = Faker("name")
+    subject = Faker("word")
+    msg = Faker("text")
+
+    class Meta:
+        model = Contact   
