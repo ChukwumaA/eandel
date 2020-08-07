@@ -591,16 +591,16 @@
                 </h4>
 
                 <div class="col-md-6">
-                  <input class="form-control input-box" id="name" type="text" name="name" placeholder="Your Name">
+                  {{form.name}}
                 </div>
 
                 <div class="col-md-6">
-                  <input class="form-control input-box" id="email" type="email" name="email" placeholder="Your Email">
+                  {{form.email}}
                 </div>
 
                 <div class="col-md-12">
-                  <input class="form-control input-box" id="subject" type="text" name="subject" placeholder="Subject">
-                  <textarea class="form-control textarea-box" id="message" rows="8" placeholder="Message"></textarea>
+                  {{form.subject}}
+                  {{form.msg}}
                 </div>
 
                 <button class="btn hvr-bounce-to-right" type="submit" id="submit" name="submit" data-style="expand-left">Send Message</button>
