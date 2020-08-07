@@ -12,6 +12,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       -run:
+        name: installing dependencies
         command: |
             python3 -m venv venv
             . venv/bin/activate
