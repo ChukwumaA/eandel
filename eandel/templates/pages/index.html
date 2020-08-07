@@ -236,7 +236,7 @@
       <div class="col-md-6">
         <div class="team-member">
           <div class="team-img">
-            <img src="{% static 'images/team/t-9.jpg' %}" alt=""/>
+            <img src="{% static 'images/team/uche.jpg' %}" alt=""/>
           </div>
         </div>
         <div class="team-title">
@@ -256,7 +256,7 @@
       <div class="col-md-6">
         <div class="team-member">
           <div class="team-img">
-            <img src="{% static 'images/team/t-10.jpg' %}" alt=""/>
+            <img src="{% static 'images/team/chidinma.jpg' %}" alt=""/>
           </div>
         </div>
         <div class="team-title">
@@ -517,7 +517,7 @@
 
 
 
-  <div class="section-top cr-bg-color">
+  {% comment %} <div class="section-top cr-bg-color">
     <div class="row">
       <div class="col-md-12">
         <div class=" clients">
@@ -547,7 +547,7 @@
 
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
 
 
 
@@ -578,8 +578,8 @@
               </div>
 
               <!-- FORM START -->
-              <form class="contact-form archi-contact">
-
+              <form class="contact-form archi-contact" action="." method="POST">
+                {% csrf_token %}
                 <!-- IF MAIL SENT SUCCESSFULLY -->
                 <h4 class="success">
                   <i class="icon_check"></i> Your message has been sent successfully.
