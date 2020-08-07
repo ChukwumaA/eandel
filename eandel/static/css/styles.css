@@ -1231,11 +1231,7 @@ section.divider i.fa {
   background: rgba(0,0,0,0.9);
 }
 
-.contact-arch{
-  background: url(../images/omicron/con-bg-1.jpg) no-repeat center fixed;
-    -webkit-background-size: cover;
-            background-size: cover;
-}
+
 .contact-arch-overlay{
   background-color: rgba(06,06,06,.8);
 }
@@ -3458,16 +3454,7 @@ text-transform: uppercase;}
 .const-choice .desc{
   padding-right: 60px;
 }
-.agency-video-image {
-  background: url('../images/omicron/vdo-bg.html');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-attachment: initial;
-  background-repeat: no-repeat;
-}
+
 .agency-video-overlay{
   position: relative;
   padding-top: 40px;
@@ -3609,12 +3596,7 @@ text-transform: uppercase;}
     color: #74757e;
     padding-bottom: 25px;
 }
-.st-cs-1{
-  background: url(../images/omicron/cs-01.jpg);
-  padding-left: 0px;
-  padding-right: 0px;
-  background-size: cover;
-}
+
 .st-cs-overlay{
   background: rgba(6,6,6,0.7);
   padding-left: 0px;
@@ -3622,18 +3604,7 @@ text-transform: uppercase;}
   padding-top: 60px;
   padding-bottom: 45px;
 }
-.st-cs-2{
- background: url(../images/omicron/cs-02.jpg);
-  padding-left: 0px;
-  padding-right: 0px;
-  background-size: cover;
-}
-.st-cs-3{
-  background: url(../images/omicron/cs-03.jpg);
-  padding-left: 0px;
-  padding-right: 0px;
-  background-size: cover;
-}
+
 .agency-2-work{
   background-color: #fff;
 }
