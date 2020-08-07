@@ -64,6 +64,8 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 
 # STATIC
 # ------------------------
+INSTALLED_APPS.insert(3, 'cloudinary_storage')
+INSTALLED_APPS += ['cloudinary']
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 # MEDIA
 # ------------------------------------------------------------------------------
