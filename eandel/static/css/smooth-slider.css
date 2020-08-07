@@ -71,26 +71,6 @@
   transition: transform 0.5s, -webkit-transform 0.5s;
   will-change: transform;
 }
-.back__bg-1,
-.front__bg-1 {
-  z-index: -1000;
-  background-image: url(../images/omicron/sl-1.jpg);
-}
-.back__bg-2,
-.front__bg-2 {
-  z-index: -1000;
-  background-image: url(../images/omicron/sl-2.jpg);
-}
-.back__bg-3,
-.front__bg-3 {
-  z-index: -1000;
-  background-image: url(../images/omicron/sl-3.jpg);
-}
-.back__bg-4,
-.front__bg-4 {
-  z-index: -1000;
-  background-image: url(../images/omicron/sl-4.jpg);
-}
 
 .back__bg.hidden {
   display: none;
