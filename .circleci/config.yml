@@ -11,9 +11,16 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
+      -run:
+        command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements/local.txt
       - run:
-          command: pytest
-          name: Test
+          name: Running tests
+          command: |
+            . venv/bin/activate
+            pytest
 
 workflows:
   main:
