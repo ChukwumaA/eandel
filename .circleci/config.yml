@@ -9,15 +9,21 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - restore_cache:
+          key: v001-app-{{ .Branch }}-{{ checksum "requirements/local.txt" }}
       - run:
           name: installing dependencies
           command: |
               python3 -m venv venv
               . venv/bin/activate
               pip install -r requirements/local.txt
+      - save_cache:
+          key: v001-app-{{ .Branch }}-{{ checksum "requirements/local.txt" }}
+          paths:
+            - 'venv'
+      - run:
+          name: Add python project to path
+          command: 'echo "$(realpath .)/app" > venv/lib/python3.7/site-packages/app.pth'
       - run:
           name: Running tests
           command: |
