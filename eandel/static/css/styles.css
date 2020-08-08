@@ -5208,14 +5208,7 @@ text-align: left;}
 .square-tabs .nav-pills>li+li {
     margin-left: 20px;
 }
-/*.tab-parallax-alt {
-    background-image: url("../../img/parallax/13.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    padding: 200px 0;
-    background-position: 50% 50%;
-}*/
+
 /* ==================================================================
   PROGRESS BAR
 ================================================================== */
