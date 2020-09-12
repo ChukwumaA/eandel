@@ -1,10 +1,12 @@
 from django.contrib import messages
+from django.http import HttpResponse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import DetailView, RedirectView, UpdateView
 from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
 from .forms import ContactForm
 
 User = get_user_model()
@@ -52,16 +54,24 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 user_redirect_view = UserRedirectView.as_view()
 
 
-class HomeView(FormView):
+class HomeView(TemplateView):
 
     form_class = ContactForm
     template_name = 'pages/index.html'
-    success_url = '/#contact'
+    success_url = '/'
 
     def post(self, request, *args, **kwargs):
-        instance = super().post(request, *args, **kwargs)
-        messages.success(request, 'Your message has been sent successfully, We usually respond within 24 hours')
-        return instance
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return HttpResponse(status=200)
+        return HttpResponse(status=400)
+
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['form'] = ContactForm()
+        return data
 
 
 home_view = HomeView.as_view()

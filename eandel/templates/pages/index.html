@@ -585,12 +585,12 @@
               <form class="contact-form archi-contact" action="." method="POST">
                 {% csrf_token %}
                 <!-- IF MAIL SENT SUCCESSFULLY -->
-                <h4 class="success">
+                <h4 class="success text-success">
                   <i class="icon_check"></i> Your message has been sent successfully.
                 </h4>
 
                 <!-- IF MAIL SENDING UNSUCCESSFULL -->
-                <h4 class="error">
+                <h4 class="error text-danger">
                   <i class="icon_error-circle"></i> Please enter a valid email and message must be longer than 1 character.
                 </h4>
 
@@ -606,7 +606,7 @@
                   {{form.subject}}
                   {{form.msg}}
                 </div>
-
+                <!-- <input type="submit" class="btn hvr-bounce-to-right" name="submit" value="SEND MESSAGE"> -->
                 <button class="btn hvr-bounce-to-right" type="submit" id="submit" name="submit" data-style="expand-left">Send Message</button>
 
               </form>
