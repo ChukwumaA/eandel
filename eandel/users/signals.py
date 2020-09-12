@@ -10,4 +10,4 @@ def send_mail(sender, instance, **kwargs):
     body = 'NAME: {}\nEMAIL: {}\nMESSAGE:\n{}'.format(instance.name, instance.email, instance.msg)
     to = ['ijeoma.mbah@eandeafrica.com', 'uche.mbah@eandeafrica.com']
     from_email = 'admin@eandeafrica.com'
-    sm(subject, body, from_email, to)
+    # sm(subject, body, from_email, to)
