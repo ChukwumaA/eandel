@@ -368,6 +368,7 @@
                         $("#email").val("");
                         $("#subject").val("");
                         $("#message").val("");
+                        console.log('SENT')
                     }
                 });
             } else {
