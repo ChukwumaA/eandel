@@ -296,6 +296,47 @@
 
                   <div class="call-info">
                     <span class="call-subtitle">We are Reimagining Luxury in Africa.</span>
+                    <span class="call-subtitle">Here is a link to our prototype https://luxfrica.herokuapp.com/</span>
+                    <body style = "text-align:center;">
+                        <button onclick = "Luxfrica()">
+                          May You?
+                        </button>
+                        
+                          <p id = "proto" style =
+                          "font-size: 19px; font-weight: regular;">
+                          </p>
+                                    
+                            <script>
+                              var el_up = document.getElementById("proto");
+                              var el_down = document.getElementById("GFG_DOWN");
+                              
+                              el_up.innerHTML = "Below is a link to our prototype ";
+                                  // + "a link using JavaScript."
+                              
+                              function Luxfrica() {
+                                
+                                // Create anchor element.
+                                var a = document.createElement('a');
+                                
+                                // Create the text node for anchor element.
+                                var link = document.createTextNode("Come join us.");
+                                
+                                // Append the text node to anchor element.
+                                a.appendChild(link);
+                                
+                                // Set the title.
+                                a.title = "Come join us";
+                                
+                                // Set the href property.
+                                a.href = "https://luxfrica.herokuapp.com/";
+                                
+                                // Append the anchor element to the body.
+                                document.body.appendChild(a);
+                              }
+                            </script>
+                        </body>
+                              				
+
 
                   </div>
 
@@ -427,7 +468,7 @@
               <li>Fashion Retail<div class="label numbers">90%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="70" role="progressbar">
+                  <div class="bar" data-value="90" role="progressbar">
                     90
                   </div>
                 </div>
@@ -436,7 +477,7 @@
               <li>Brand Management  <div class="label numbers">85%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="80" role="progressbar">
+                  <div class="bar" data-value="85" role="progressbar">
                     85
                   </div>
                 </div>
@@ -445,7 +486,7 @@
               <li>Real Estate <div class="label numbers">70%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="90" role="progressbar">
+                  <div class="bar" data-value="70" role="progressbar">
                     70
                   </div>
                 </div>
@@ -454,7 +495,7 @@
               <li>Concierge Services<div class="label numbers">70%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="75" role="progressbar">
+                  <div class="bar" data-value="70" role="progressbar">
                     70
                   </div>
                 </div>
