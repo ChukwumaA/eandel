@@ -3,7 +3,7 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.10.4
-      - image: cimg/postgres:14.2.0
+      - image: circleci/postgres:10.5
     environment:
       DATABASE_URL: postgres://postgres:@localhost/circle_test
     working_directory: ~/app
