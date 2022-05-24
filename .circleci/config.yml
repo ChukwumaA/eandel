@@ -10,8 +10,7 @@ jobs:
       - image: circleci/postgres:10.5
     environment:
       DATABASE_URL: postgres://postgres:@localhost/circle_test?sslmode=disable
-          POSTGRES_USER: root
-          POSTGRES_DB: circle_test
+          
     working_directory: ~/app
     steps:
       - checkout
