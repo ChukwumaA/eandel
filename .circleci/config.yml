@@ -1,11 +1,19 @@
 version: 2.1
+orbs:
+  python: circleci/python@1.5.0
+  heroku: circleci/heroku@1.2.6
+
 jobs:
   build-and-test:
     docker:
-      - image: circleci/python:3.7.3
-      - image: circleci/postgres:10.5
+      - image: cimg/python:3.10.4
+      # - image: circleci/postgres:10.5
     environment:
-      DATABASE_URL: postgres://postgres:@localhost/circle_test
+      DATABASE_URL: postgres://postgres:@localhost/circle_test?sslmode=disable
+       - image: cimg/postgres:14.2.0
+       environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
     working_directory: ~/app
     steps:
       - checkout
@@ -23,12 +31,21 @@ jobs:
             - 'venv'
       - run:
           name: Add python project to path
-          command: 'echo "$(realpath .)/app" > venv/lib/python3.7/site-packages/app.pth'
+          command: 'echo "$(realpath .)/app" > venv/lib/python3.10/site-packages/app.pth'
       - run:
           name: Running tests
           command: |
             . venv/bin/activate
             pytest
+
+deploy: # this can be any name you choose
+    docker:
+      - image: cimg/python:3.10.4
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - heroku/deploy-via-git: 
+          force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
 
 workflows:
   main:
