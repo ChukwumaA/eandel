@@ -10,7 +10,8 @@
         <div class="kenburn-overlay">
           <div class="intro-section text-center">
 
-            <h1 class="intro hs11-h1 text-white-5">£ANDÉ</h1>
+            <h1 class="intro hs11-h1 text-white-5" style="margin-top: 100px;">£ANDÉ</h1>
+
 
 
           </div>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="desc">
 
-                      We provide unlimited access to designer brands through digital experience targeted at your comfort.
+                      We provide unlimited access to designer brands through digital experiences targeted at your comfort.
 
                 </div>
 
@@ -70,7 +71,7 @@
                   Luxury Living
                 </div>
                 <div class="desc">
-                    Offering optimum comfort through redefined living spaces and environment.
+                    We offer optimum comfort through redefined living spaces and environment.
 
                 </div>
 
@@ -232,7 +233,7 @@
       <div class="col-md-6">
         <div class="team-member">
           <div class="team-img">
-            <img src="{% static 'images/team/uch.jpg' %}" alt=""/>
+            <img src="{% static 'images/team/uche_si7y1x.jpg' %}" alt=""/>
           </div>
         </div>
         <div class="team-title">
@@ -252,7 +253,7 @@
       <div class="col-md-6">
         <div class="team-member">
           <div class="team-img">
-            <img src="{% static 'images/team/chi.jpg' %}" alt=""/>
+            <img src="{% static 'images/team/ijeoma_vr3xz3.jpg' %}" alt=""/>
           </div>
         </div>
         <div class="team-title">
@@ -295,6 +296,47 @@
 
                   <div class="call-info">
                     <span class="call-subtitle">We are Reimagining Luxury in Africa.</span>
+                    <span class="call-subtitle">Here is a link to our prototype https://luxfrica.herokuapp.com/</span>
+                    <body style = "text-align:center;">
+                        <button onclick = "Luxfrica()">
+                          May You?
+                        </button>
+                        
+                          <p id = "proto" style =
+                          "font-size: 19px; font-weight: regular;">
+                          </p>
+                                    
+                            <script>
+                              var el_up = document.getElementById("proto");
+                              var el_down = document.getElementById("GFG_DOWN");
+                              
+                              el_up.innerHTML = "Below is a link to our prototype ";
+                                  // + "a link using JavaScript."
+                              
+                              function Luxfrica() {
+                                
+                                // Create anchor element.
+                                var a = document.createElement('a');
+                                
+                                // Create the text node for anchor element.
+                                var link = document.createTextNode("Come join us.");
+                                
+                                // Append the text node to anchor element.
+                                a.appendChild(link);
+                                
+                                // Set the title.
+                                a.title = "Come join us";
+                                
+                                // Set the href property.
+                                a.href = "https://luxfrica.herokuapp.com/";
+                                
+                                // Append the anchor element to the body.
+                                document.body.appendChild(a);
+                              }
+                            </script>
+                        </body>
+                              				
+
 
                   </div>
 
@@ -329,7 +371,7 @@
       </div>
       <div class="col-md-8">
         <div class="const-srv-title">
-          What we are best at
+          What we do
         </div>
         <div class="const-srv">
           <div class="col-md-6">
@@ -423,37 +465,37 @@
             <!-- SKILL BAR START -->
             <div style="text-align: right;">
             <ul class="progress-skill-bar">
-              <li>Fashion Retail<div class="label numbers">70%</div></li>
+              <li>Fashion Retail<div class="label numbers">90%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="70" role="progressbar">
+                  <div class="bar" data-value="90" role="progressbar">
                     90
                   </div>
                 </div>
               </li>
 
-              <li>Brand Management  <div class="label numbers">80%</div></li>
+              <li>Brand Management  <div class="label numbers">85%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="80" role="progressbar">
+                  <div class="bar" data-value="85" role="progressbar">
                     85
                   </div>
                 </div>
               </li>
 
-              <li>Real Estate <div class="label numbers">90%</div></li>
+              <li>Real Estate <div class="label numbers">70%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="90" role="progressbar">
+                  <div class="bar" data-value="70" role="progressbar">
                     70
                   </div>
                 </div>
               </li>
 
-              <li>Conceige Services<div class="label numbers">75%</div></li>
+              <li>Concierge Services<div class="label numbers">70%</div></li>
               <li>
                 <div class="progress">
-                  <div class="bar" data-value="75" role="progressbar">
+                  <div class="bar" data-value="70" role="progressbar">
                     70
                   </div>
                 </div>
@@ -465,7 +507,7 @@
           </div>
           <!-- SKILL PARTS END-->
 
-          <div class="row" id="funfactor">
+          <!-- <div class="row" id="funfactor">
             <div style="text-align: center;">
              <div class="col-md-3">
               
@@ -498,7 +540,7 @@
 
 
               <div class="fun-info">
-                <h2 class="timer numbers" data-from="0" data-to="0"> 1 </h2>
+                <h2 class="timer numbers" data-from="0" data-to="1"> 1 </h2>
                 <span class="fun-work">Agreements</span>
               </div>
 
@@ -506,7 +548,7 @@
           </div>
         </div> <!-- END ROW -->
 
-        </div>
+        </div> -->
 
         <!-- <div class="col-md-5">
           <div class="fit-image nopadding">
