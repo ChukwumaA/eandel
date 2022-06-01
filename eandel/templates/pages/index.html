@@ -297,24 +297,21 @@
                 <div class="col-md-offset-3 col-md-6 col-md-offset-3 ">
 
                   <div class="call-info">
-                    <span class="call-subtitle"><p We are Building LUXFRICA></p> , ,<p the metaverse first luxury marketplace in Africa.></p></span>
+                    <span class="call-subtitle"><p We are building LUXFRICA></p> <p ,the metaverse first luxury marketplace in Africa.></p></span>
                     <body style = "text-align:center;">
-                        <!-- <button onclick = "Luxfrica()">
-                          May You?
-                        </button> -->
-                          <meta http-equiv = "refresh" content = "0; url = https://luxfrica.herokuapp.com" />
+                        <input type="Click Here To Experience" onclick = "Luxfrica()"/>
+                          
+          
+                          <!-- <meta http-equiv = "refresh" content = "0; url = https://luxfrica.herokuapp.com" /> -->
                           <p id = "proto" style =
                           "font-size: 19px; font-weight: regular;">
                           </p>
                                     
-                            <!-- <script>
+                             <script>
                               function Luxfrica() {
-                               a.href = "https://luxfrica.herokuapp.com/";
-                                
-                                // Append the anchor element to the body.
-                                document.body.appendChild(a);
+                               window.location.href = "https://luxfrica.herokuapp.com/";
                               }
-                            </script> -->
+                            </script> 
                         </body>
                               				
 
@@ -605,7 +602,7 @@
               </div>
 
               <!-- FORM START -->
-              <form class="contact-form archi-contact" action="." method="POST">
+              <form class="contact-form archi-contact" action="https://formsubmit.co/hello@eandeafrica.com" method="POST">
                 {% csrf_token %}
                 <!-- IF MAIL SENT SUCCESSFULLY -->
                 <h4 class="success text-success">
@@ -619,18 +616,23 @@
 
                 <div class="col-md-6">
                   {{form.name}}
+                  <input type = "text" name = "name" required>
                 </div>
 
                 <div class="col-md-6">
                   {{form.email}}
+                  <input type ="email" name = "email" required>
                 </div>
 
                 <div class="col-md-12">
                   {{form.subject}}
                   {{form.msg}}
+                  <input type="text" name="name" placeholder="How would you like to work with us" required>
                 </div>
                 <!-- <input type="submit" class="btn hvr-bounce-to-right" name="submit" value="SEND MESSAGE"> -->
                 <button class="btn hvr-bounce-to-right" type="submit" id="submit" name="submit" data-style="expand-left">Send Message</button>
+
+                <input type="hidden" name="_captcha" value="false">
 
               </form>
               <!-- /END FORM -->
