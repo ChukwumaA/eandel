@@ -235,7 +235,7 @@
           <div class="team-img">
             <img src="{% static 'images/team/uc.jpg' %}" alt=""
                 width = "3840"
-                height = "4478/>
+                height = "4478"/>
           </div>
         </div>
         <div class="team-title">
@@ -255,7 +255,9 @@
       <div class="col-md-6">
         <div class="team-member">
           <div class="team-img">
-            <img src="{% static 'images/team/ij.jpg' %}" alt=""/>
+            <img src="{% static 'images/team/ij.jpg' %}" alt=""
+            width = "3840"
+            height = "4478"/>
           </div>
         </div>
         <div class="team-title">
@@ -297,21 +299,21 @@
                 <div class="col-md-offset-3 col-md-6 col-md-offset-3 ">
 
                   <div class="call-info">
-                    <span class="call-subtitle"><p We are building LUXFRICA></p> <p ,the metaverse first luxury marketplace in Africa.></p></span>
+                    <span class="call-subtitle"></span>
                     <body style = "text-align:center;">
-                        <input type="Click Here To Experience" onclick = "Luxfrica()"/>
-                          
+                        <!-- <input type="Click Here To Experience" onclick = "Luxfrica()"/> -->
+                        <p We are building LUXFRICA></p> 
+                        <p The metaverse first luxury marketplace in Africa.></p>
+                        <button onClick = "window.location.href= 'https://luxfrica.herokuapp.com';">
+                          Click Here To Experience
+                        </button>
           
                           <!-- <meta http-equiv = "refresh" content = "0; url = https://luxfrica.herokuapp.com" /> -->
-                          <p id = "proto" style =
+                          <!-- <p id = "proto" style =
                           "font-size: 19px; font-weight: regular;">
-                          </p>
+                          </p> -->
                                     
-                             <script>
-                              function Luxfrica() {
-                               window.location.href = "https://luxfrica.herokuapp.com/";
-                              }
-                            </script> 
+                              
                         </body>
                               				
 
@@ -615,18 +617,16 @@
 
                 <div class="col-md-6">
                   {{form.name}}
-                  <input type = "text" name = "name" required>
+                  
                 </div>
 
                 <div class="col-md-6">
                   {{form.email}}
-                  <input type ="email" name = "email" required>
                 </div>
 
                 <div class="col-md-12">
                   {{form.subject}}
                   {{form.msg}}
-                  <input type="text" name="name" placeholder="How would you like to work with us" required>
                 </div>
                 <!-- <input type="submit" class="btn hvr-bounce-to-right" name="submit" value="SEND MESSAGE"> -->
                 <button class="btn hvr-bounce-to-right" type="submit" id="submit" name="submit" data-style="expand-left">Send Message</button>
