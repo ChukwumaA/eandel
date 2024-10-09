@@ -1,6 +1,6 @@
 from django.contrib.auth import forms, get_user_model
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django import forms as f
 from django.contrib import messages
 from .models import Contact
@@ -34,7 +34,7 @@ class UserCreationForm(forms.UserCreationForm):
 
 
 class ContactForm(f.ModelForm):
-    
+
     class Meta:
         model = Contact
         fields = ('name', 'email', 'subject', 'msg')
