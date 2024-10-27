@@ -45,3 +45,7 @@ django-compressor==4.4  # https://github.com/django-compressor/django-compressor
 
 # Redis cache backend
 django-redis==5.4.0  # https://github.com/niwinz/django-redis
+
+django-debug-toolbar==3.2.4  # https://github.com/jazzband/django-debug-toolbar
+
+django-extensions==3.2.3  # https://github.com/django-extensions/django-extensions

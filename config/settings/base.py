@@ -3,6 +3,8 @@ Base settings to build other settings files upon.
 """
 from pathlib import Path
 
+import dj_database_url
+import os
 import environ
 
 ROOT_DIR = Path(__file__).parents[2]
@@ -42,9 +44,34 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres://postgres:cash  app@localhost:5434/eandel")
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL", "postgres://postgres:cash app@localhost:5434/eandel")
+    )
 }
+# Additional settings for the database
+DATABASES["default"].update({
+    "ENGINE": "django.db.backends.postgresql",
+    "OPTIONS": {
+        "options": "-c search_path=public"
+    },
+})
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
+##DataBase Config for Testing
+"""
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "****",
+        "HOST": "localhost",
+        "PORT": "****",
+        "OPTIONS": {
+            "options": "-c search_path=public"
+        },
+    }
+}"""
 
 # URLS
 # ------------------------------------------------------------------------------
@@ -162,18 +189,10 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
     {
-        # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         "DIRS": [str(APPS_DIR / "templates")],
+        "APP_DIRS": True,
         "OPTIONS": {
-            # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            "loaders": [
-                "django.template.loaders.filesystem.Loader",
-                "django.template.loaders.app_directories.Loader",
-            ],
-            # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
@@ -240,7 +259,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
+                      "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
@@ -297,3 +316,4 @@ STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
