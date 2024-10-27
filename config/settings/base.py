@@ -45,7 +45,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL", "postgres://postgres:cash app@localhost:5434/eandel")
+        default=os.getenv("DATABASE_URL", "postgres://postgres:cash app@localhost:5432/eandel")
     )
 }
 # Additional settings for the database
